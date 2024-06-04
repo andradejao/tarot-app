@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<style></style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +14,23 @@
     <div class="container">
         <div class="carta">
             <h1 id="titulo"></h1>
-            
+
             <div class="face" id="centro"></div>
         </div>
         <button onclick="sortearCarta()">Teste a sua sorte!</button>
         <p id="texto"></p>
     </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker registrado com escopo: ', registration.scope)
+                }).catch((error) => {
+                    console.log('Falha no registro do Service Worker: ', error)
+                })
+        }
+    </script>
     <script src="taro.js"></script>
-
 </body>
 
 </html>
