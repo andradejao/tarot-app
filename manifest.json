@@ -1,12 +1,13 @@
 {
     "name": "TarotWeb", 
-    "short_name": "PWA",
-    "start_url": "/",
+    "short_name": "TarotApp",
+    "start_url": "/tarot-app/",
     "display": "standalone",
     "orientation": "portrait",
-    "background_color": "#ffffff",
+    "background_color": "#f2d698",
     "theme_color": "#007bff",
     "lang": "pt-BR",
+    "author": "João Vitor Andrade",
     "icons": [
       {
         "src": "icon192.png",
