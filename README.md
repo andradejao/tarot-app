@@ -9,6 +9,8 @@
     </a>
 </p>
 
-
 # Tarot-App
 Aprendendo a criar meu primeiro PWA funcional
+
+![QR-CODE](https://github.com/andradejao/tarot-app/assets/129785228/8f747239-1e86-4f1a-b27b-df6a29124d59)
+
