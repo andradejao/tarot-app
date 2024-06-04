@@ -1,7 +1,7 @@
 {
     "name": "TarotWeb", 
     "short_name": "TarotApp",
-    "start_url": "/index.html",
+    "start_url": "/tarot-app/",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#f2d698",
