@@ -59,7 +59,7 @@ self.addEventListener('fetch', (event) => {
 })
 
 
-// Responsável por melhora de desempenho, especialmente em rede ruim >>
+// Responsável por melhora de desempenho, especialmente em redes ruins >>
 
 // Interceptando as solicitações de rede e servindo arquivos do cache quando offline
 self.addEventListener('fetch', (event) => {
