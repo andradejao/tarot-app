@@ -57,3 +57,35 @@ self.addEventListener('fetch', (event) => {
       })
   )
 })
+
+
+// Responsável por melhora de desempenho, especialmente em rede ruim >>
+
+// Interceptando as solicitações de rede e servindo arquivos do cache quando offline
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => {
+        // Se o arquivo está no cache, serve o arquivo do cache
+        if (response) {
+          return response
+        }
+        // Caso contrário, faz uma solicitação de rede e armazena a resposta em cache
+        return fetch(event.request)
+          .then((response) => {
+            // Verifica se a resposta é válida antes de armazená-la em cache
+            if (!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+            // Clona a resposta para evitar consumir o corpo da resposta
+            const responseToCache = response.clone();
+            caches.open(cachePWA)
+              .then((cache) => {
+                cache.put(event.request, responseToCache);
+              });
+            return response;
+          });
+      })
+  );
+});
+
